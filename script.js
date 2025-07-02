@@ -166,6 +166,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   };
+
+  window.addEventListener('scroll', function() {
+  if (window.scrollY > 100) {
+    navbar.classList.add('scrolled');
+    navbar.style.backgroundColor = 'rgba(26, 42, 58, 0.95)';
+    navbar.style.padding = '0.5rem 2rem';
+  } else {
+    navbar.classList.remove('scrolled');
+    navbar.style.backgroundColor = 'var(--light-color)';
+    navbar.style.padding = '1rem 2rem';
+  }
+});
   
   // Inicializar elementos con opacidad 0 para la animación
   document.querySelectorAll('.feature, .service-card, .portfolio-container, .about-content, .contact-container').forEach(element => {

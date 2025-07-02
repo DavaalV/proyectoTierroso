@@ -61,7 +61,7 @@ img {
 
 /* Header */
 header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/Termicos.jpeg');
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/ImagenGrande.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -110,7 +110,65 @@ header h1 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos para el contenedor del logo y texto */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+/* Ajustes cuando se hace scroll */
+#navbar.scrolled .logo-img {
+  height: 35px;
+}
+
+#navbar.scrolled .logo-text {
+  font-size: 1.3rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .logo-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    gap: 8px;
+  }
+  .logo-img {
+    height: 35px;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-img {
+    height: 30px;
+  }
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
 /* Navegación */
+
+
 #navbar {
   position: fixed;
   top: 0;
