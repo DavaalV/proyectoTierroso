@@ -189,3 +189,22 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', animateOnScroll);
   animateOnScroll(); // Ejecutar una vez al cargar la página
 });
+
+
+
+// Añade esto al final del archivo
+function handleBlogNavigation() {
+  if (window.location.hash) {
+    const targetSection = document.querySelector(window.location.hash);
+    if (targetSection) {
+      setTimeout(() => {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }, 300); // Pequeño delay para asegurar que la página se cargó
+    }
+  }
+}
+
+// Ejecutar al cargar blog.html
+if (document.querySelector('body').classList.contains('blog-page')) { // Añade class="blog-page" al <body> de blog.html
+  handleBlogNavigation();
+}
