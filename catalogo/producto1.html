@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Básica | $3,000 MXN</title>
+    <style>
+        /* CSS integrado para simplificar */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero {
+            background: #f4f4f4;
+            padding: 2rem;
+            text-align: center;
+        }
+        .services {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .contact {
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        button {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Página Básica</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h2>Bienvenido</h2>
+        <p>Ofrecemos soluciones simples y efectivas para tu negocio.</p>
+    </section>
+
+    <section id="servicios" class="services">
+        <div class="service-card">
+            <h3>Diseño Web</h3>
+            <p>Páginas rápidas y adaptables.</p>
+        </div>
+        <div class="service-card">
+            <h3>SEO Básico</h3>
+            <p>Mejoramos tu visibilidad en Google.</p>
+        </div>
+        <div class="service-card">
+            <h3>Hosting</h3>
+            <p>Alojamiento confiable.</p>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <h2>Contacto</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <script>
+        // Simular envío de formulario
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Mensaje enviado (simulado). En un proyecto real, se conectaría a FormSubmit.co o EmailJS.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

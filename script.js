@@ -20,9 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
       navbar.style.backgroundColor = 'rgba(26, 42, 58, 0.95)';
       navbar.style.padding = '0.5rem 2rem';
     } else {
+      navbar.classList.remove('scrolled');
       navbar.style.backgroundColor = 'var(--light-color)';
       navbar.style.padding = '1rem 2rem';
     }
@@ -64,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-
   // ========== CARRUSEL FUNCIONAL ==========
   function initCarousel() {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -135,18 +136,6 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCarousel();
       }
     });
-    
-    // Autoavance opcional (descomentar para activar)
-    /*
-    let autoSlide = setInterval(() => {
-      if (currentIndex < portfolioItems.length - 1) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      updateCarousel();
-    }, 5000);
-    */
   }
   
   // Inicializar el carrusel al cargar la página
@@ -154,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Animaciones al hacer scroll
   const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.feature, .service-card, .portfolio-container, .about-content, .contact-container');
+    const elements = document.querySelectorAll('.feature, .service-card, .portfolio-container, .about-content, .contact-container, .catalog-grid');
     
     elements.forEach(element => {
       const elementPosition = element.getBoundingClientRect().top;
@@ -167,20 +156,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   };
 
-  window.addEventListener('scroll', function() {
-  if (window.scrollY > 100) {
-    navbar.classList.add('scrolled');
-    navbar.style.backgroundColor = 'rgba(26, 42, 58, 0.95)';
-    navbar.style.padding = '0.5rem 2rem';
-  } else {
-    navbar.classList.remove('scrolled');
-    navbar.style.backgroundColor = 'var(--light-color)';
-    navbar.style.padding = '1rem 2rem';
-  }
-});
-  
   // Inicializar elementos con opacidad 0 para la animación
-  document.querySelectorAll('.feature, .service-card, .portfolio-container, .about-content, .contact-container').forEach(element => {
+  document.querySelectorAll('.feature, .service-card, .portfolio-container, .about-content, .contact-container, .catalog-grid').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(30px)';
     element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -188,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.addEventListener('scroll', animateOnScroll);
   animateOnScroll(); // Ejecutar una vez al cargar la página
-});
 
 
 
@@ -205,6 +181,58 @@ function handleBlogNavigation() {
 }
 
 // Ejecutar al cargar blog.html
-if (document.querySelector('body').classList.contains('blog-page')) { // Añade class="blog-page" al <body> de blog.html
+if (document.querySelector('body').classList.contains('blog-page')) {
+  handleBlogNavigation();
+}
+  // Toggle del panel lateral del blog
+  const toggleBlogBtn = document.getElementById('toggle-blog-sidebar');
+  const blogSidebarContainer = document.querySelector('.blog-sidebar-container');
+  const blogSidebar = document.querySelector('.blog-sidebar');
+
+  if (toggleBlogBtn && blogSidebar) {
+    // Estado inicial: oculto
+    blogSidebarContainer.classList.add('hidden');
+    toggleBlogBtn.querySelector('i').classList.remove('fa-chevron-left');
+    toggleBlogBtn.querySelector('i').classList.add('fa-chevron-right');
+
+    toggleBlogBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Evitar que el clic se propague
+      blogSidebarContainer.classList.toggle('hidden');
+      
+      // Cambiar icono según estado
+      const icon = this.querySelector('i');
+      if (blogSidebarContainer.classList.contains('hidden')) {
+        icon.classList.remove('fa-chevron-left');
+        icon.classList.add('fa-chevron-right');
+      } else {
+        icon.classList.remove('fa-chevron-right');
+        icon.classList.add('fa-chevron-left');
+      }
+    });
+
+    // Ocultar al hacer clic fuera del panel
+    document.addEventListener('click', function(e) {
+      if (!blogSidebarContainer.contains(e.target) && !blogSidebarContainer.classList.contains('hidden')) {
+        blogSidebarContainer.classList.add('hidden');
+        toggleBlogBtn.querySelector('i').classList.remove('fa-chevron-left');
+        toggleBlogBtn.querySelector('i').classList.add('fa-chevron-right');
+      }
+    });
+  }
+});
+// Funciones fuera del DOMContentLoaded
+function handleBlogNavigation() {
+  if (window.location.hash) {
+    const targetSection = document.querySelector(window.location.hash);
+    if (targetSection) {
+      setTimeout(() => {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }
+}
+
+// Ejecutar al cargar blog.html
+if (document.querySelector('body').classList.contains('blog-page')) {
   handleBlogNavigation();
 }
