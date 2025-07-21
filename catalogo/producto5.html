@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Elite - Plantilla $8,000 MXN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Plantilla Profesional - $8,000 MXN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #3B82F6;
-            --primary-dark: #2563EB;
-            --secondary: #10B981;
-            --dark: #1F2937;
-            --light: #F9FAFB;
-            --gray: #6B7280;
-            --radius: 10px;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --radius: 8px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: var(--dark);
-            background-color: var(--light);
         }
 
         .container {
@@ -53,23 +50,17 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: #128C7E;
-            transform: translateX(-3px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* Header */
-        .premium-header {
+        header {
             background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 999;
-            box-shadow: var(--shadow);
         }
 
         .header-container {
@@ -79,75 +70,55 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            height: 90vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(37, 99, 235, 0.9)),
-                        url('assets/hero-bg.jpg') center/cover;
-            color: white;
+            padding: 100px 0;
+            background: var(--light);
             text-align: center;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
+            color: var(--primary);
         }
 
-        /* Features */
-        .features {
+        /* Servicios */
+        .services {
             padding: 80px 0;
-            background: white;
         }
 
-        .features-grid {
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
-        .feature-card {
-            background: var(--light);
+        .service-card {
+            background: white;
             border-radius: var(--radius);
             padding: 30px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--light);
-            padding: 80px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 50px 0;
+            padding: 40px 0;
             text-align: center;
         }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
     </style>
@@ -159,12 +130,11 @@
     </a>
 
     <!-- Header -->
-    <header class="premium-header">
+    <header>
         <div class="container header-container">
-            <div class="logo">BusinessElite</div>
+            <a href="#" class="logo">WebPro</a>
             <nav>
-                <a href="#features" class="nav-link">Características</a>
-                <a href="#testimonials" class="nav-link">Clientes</a>
+                <a href="#services" class="nav-link">Servicios</a>
                 <a href="#contact" class="btn">Contacto</a>
             </nav>
         </div>
@@ -173,76 +143,48 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Solución web premium para negocios en crecimiento</h1>
-                <p class="hero-subtitle">Diseño exclusivo + funcionalidades avanzadas por solo $8,000 MXN</p>
-                <a href="#contact" class="btn">Solicitar Demo</a>
-            </div>
+            <h1>Plantilla Profesional</h1>
+            <p class="price-tag">$8,000 MXN</p>
+            <p class="hero-subtitle">Ideal para negocios que requieren funcionalidades avanzadas y diseño exclusivo</p>
         </div>
     </section>
 
-    <!-- Features -->
-    <section id="features" class="features">
+    <!-- Servicios -->
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">¿Qué incluye?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-mobile-alt feature-icon"></i>
-                    <h3>Diseño Responsive</h3>
-                    <p>Adaptable a todos los dispositivos con rendimiento optimizado.</p>
+            <h2 class="section-title">Tipo de plantilla</h2>
+            <p class="section-subtitle">Sitio web corporativo con sistema de gestión</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>📌 ¿Para qué sirve?</h3>
+                    <p>Para empresas establecidas que necesitan:</p>
+                    <ul>
+                        <li>Sistema de reservas/citas integrado</li>
+                        <li>Área de clientes privada</li>
+                        <li>Blog profesional</li>
+                        <li>Diseño 100% exclusivo</li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-calendar-check feature-icon"></i>
-                    <h3>Sistema de Citas</h3>
-                    <p>Integración con Calendly o desarrollo personalizado.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-chart-pie feature-icon"></i>
-                    <h3>Analíticas Avanzadas</h3>
-                    <p>Configuración de Google Analytics y Meta Pixel.</p>
+                <div class="service-card">
+                    <h3>💡 Ideal para:</h3>
+                    <ul>
+                        <li>Clínicas médicas/dentales</li>
+                        <li>Consultorías profesionales</li>
+                        <li>Academias y capacitación</li>
+                        <li>Negocios con agenda de clientes</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Clientes Satisfechos</h2>
-            <!-- Aquí irían testimonios -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <h3>BusinessElite</h3>
-            <p>© 2023 Plantilla Premium - $8,000 MXN</p>
-            <div class="footer-links">
-                <a href="#">Términos</a> | 
-                <a href="#">Privacidad</a>
-            </div>
+            <p>© 2023 Plantilla Profesional - $8,000 MXN</p>
+            <p>contacto@tudominio.com | Tel: 55 1234 5678</p>
         </div>
     </footer>
-
-    <script>
-        // Efecto smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Animación para las cards
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.feature-card');
-            cards.forEach((card, index) => {
-                card.style.transitionDelay = `${index * 100}ms`;
-            });
-        });
-    </script>
 </body>
 </html>
