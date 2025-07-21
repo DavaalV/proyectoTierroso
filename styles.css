@@ -731,12 +731,12 @@ footer {
   }
 }
 
-/* Responsive */
+/* Responsive 
 @media (max-width: 1200px) {
   .blog-sidebar-container {
     display: none;
   }
-}
+} */
 
 @media (max-width: 992px) {
   .about-content,
