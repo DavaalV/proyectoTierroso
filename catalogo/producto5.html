@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla Profesional - $8,000 MXN</title>
+    <title>NombreEmpresa - Página Profesional</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2563eb;
@@ -33,24 +32,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* Botón de regreso */
-        .back-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: #25D366;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         /* Header */
@@ -86,26 +67,32 @@
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--primary);
         }
 
-        /* Servicios */
-        .services {
-            padding: 80px 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .hero-image {
             margin-top: 40px;
         }
 
-        .service-card {
-            background: white;
+        .hero-image img {
+            width: 100%;
+            max-width: 800px;
             border-radius: var(--radius);
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 80px 0;
+            align-items: center;
+        }
+
+        .content-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         /* Footer */
@@ -117,25 +104,21 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .content-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Botón de regreso -->
-    <a href="javascript:history.back()" class="back-btn">
-        <i class="fas fa-arrow-left"></i> REGRESAR
-    </a>
-
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">WebPro</a>
+            <a href="#" class="logo">NombreEmpresa</a>
             <nav>
-                <a href="#services" class="nav-link">Servicios</a>
-                <a href="#contact" class="btn">Contacto</a>
+                <a href="#" class="nav-link">Inicio</a>
+                <a href="#" class="nav-link">Servicios</a>
+                <a href="#" class="nav-link">Contacto</a>
             </nav>
         </div>
     </header>
@@ -143,36 +126,32 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Plantilla Profesional</h1>
-            <p class="price-tag">$8,000 MXN</p>
-            <p class="hero-subtitle">Ideal para negocios que requieren funcionalidades avanzadas y diseño exclusivo</p>
+            <h1>Bienvenidos a <span>NombreEmpresa</span></h1>
+            <p>Texto descriptivo genérico. Aquí va un eslogan o frase clave de la empresa.</p>
+            
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/800x500" alt="Imagen principal de la empresa">
+                <p><small>Ejemplo: Imagen corporativa o producto principal</small></p>
+            </div>
         </div>
     </section>
 
-    <!-- Servicios -->
-    <section id="services" class="services">
+    <!-- Content Section -->
+    <section class="content-section">
         <div class="container">
-            <h2 class="section-title">Tipo de plantilla</h2>
-            <p class="section-subtitle">Sitio web corporativo con sistema de gestión</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>📌 ¿Para qué sirve?</h3>
-                    <p>Para empresas establecidas que necesitan:</p>
-                    <ul>
-                        <li>Sistema de reservas/citas integrado</li>
-                        <li>Área de clientes privada</li>
-                        <li>Blog profesional</li>
-                        <li>Diseño 100% exclusivo</li>
-                    </ul>
+            <div class="content-grid">
+                <div class="content-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Imagen descriptiva">
+                    <p><small>Ejemplo: Equipo de trabajo o instalaciones</small></p>
                 </div>
-                <div class="service-card">
-                    <h3>💡 Ideal para:</h3>
+                
+                <div class="content-text">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Texto de ejemplo sobre la empresa. Reemplazar con información real:</p>
                     <ul>
-                        <li>Clínicas médicas/dentales</li>
-                        <li>Consultorías profesionales</li>
-                        <li>Academias y capacitación</li>
-                        <li>Negocios con agenda de clientes</li>
+                        <li>Fundada en [año]</li>
+                        <li>Misión/Visión</li>
+                        <li>Valores corporativos</li>
                     </ul>
                 </div>
             </div>
@@ -180,10 +159,10 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
-            <p>© 2023 Plantilla Profesional - $8,000 MXN</p>
-            <p>contacto@tudominio.com | Tel: 55 1234 5678</p>
+            <p>© 2023 <strong>NombreEmpresa</strong>. Todos los derechos reservados.</p>
+            <p><small>Ejemplo: Av. Principal #123, Ciudad | Tel: 55 1234 5678</small></p>
         </div>
     </footer>
 </body>
