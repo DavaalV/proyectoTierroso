@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Profesional | $6,000 MXN</title>
+    <title>Página Profesional</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* CSS mínimo para ejemplo */
         :root {
             --primary: #6c5ce7;
             --dark: #2d3436;
@@ -17,7 +15,6 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
             background: var(--light);
         }
         header {
@@ -31,6 +28,7 @@
         .logo {
             font-weight: 600;
             color: var(--primary);
+            font-size: 1.5rem;
         }
         nav a {
             color: var(--dark);
@@ -45,18 +43,6 @@
             text-align: center;
             padding: 4rem 5%;
         }
-        .swiper-container {
-            width: 100%;
-            max-width: 800px;
-            margin: 2rem auto;
-        }
-        .swiper-slide {
-            background: #ddd;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
         .btn {
             background: var(--primary);
             color: white;
@@ -64,12 +50,28 @@
             border-radius: 30px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 1rem;
             transition: 0.3s;
         }
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        .swiper-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .swiper-slide {
+            background: #ddd;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
         @media (max-width: 768px) {
             nav {
@@ -90,12 +92,11 @@
     </header>
 
     <section id="inicio" class="hero">
-        <h1>Soluciones digitales a medida</h1>
-        <p>Diseño y desarrollo web profesional para tu negocio.</p>
+        <h1>Soluciones profesionales</h1>
+        <p>Diseño y desarrollo web a tu medida.</p>
         <a href="#contacto" class="btn">¡Contáctanos!</a>
     </section>
 
-    <!-- Slider con Swiper -->
     <section id="proyectos">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -107,8 +108,8 @@
         </div>
     </section>
 
-    <!-- Formulario con EmailJS -->
     <section id="contacto" style="padding: 2rem 5%; max-width: 500px; margin: 0 auto;">
+        <h2>Contacto</h2>
         <form id="contact-form">
             <input type="text" id="name" placeholder="Nombre" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
             <input type="email" id="email" placeholder="Correo" required style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
@@ -117,7 +118,6 @@
         </form>
     </section>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script>
@@ -126,16 +126,18 @@
             loop: true,
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
             },
         });
 
-        // EmailJS (cambia USER_ID y SERVICE_ID)
-        emailjs.init('TU_USER_ID');
+        // EmailJS (simulado)
         document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
-            emailjs.sendForm('TU_SERVICE_ID', 'TU_TEMPLATE_ID', e.target)
-                .then(() => alert('Mensaje enviado con éxito!'))
-                .catch(() => alert('Error al enviar.'));
+            alert('Mensaje enviado (simulación con EmailJS). Configura tu cuenta en emailjs.com para hacerlo funcional.');
+            e.target.reset();
         });
     </script>
 </body>

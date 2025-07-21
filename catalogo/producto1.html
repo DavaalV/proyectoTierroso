@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Básica | $3,000 MXN</title>
+    <title>Mi Negocio Básico</title>
     <style>
-        /* CSS integrado para simplificar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            color: #333;
         }
         header {
             background: #2c3e50;
             color: white;
             padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background: #34495e;
+            padding: 0.5rem;
             text-align: center;
         }
         nav a {
@@ -24,37 +29,28 @@
             margin: 0 10px;
         }
         .hero {
-            background: #f4f4f4;
             padding: 2rem;
             text-align: center;
+            background: #f4f4f4;
         }
         .services {
-            padding: 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
+            padding: 2rem;
         }
         .service-card {
             border: 1px solid #ddd;
             padding: 1rem;
             border-radius: 5px;
+            text-align: center;
         }
-        .contact {
-            padding: 2rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        button {
+        footer {
             background: #2c3e50;
             color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
         }
         @media (max-width: 600px) {
             .services {
@@ -65,51 +61,42 @@
 </head>
 <body>
     <header>
-        <h1>Mi Página Básica</h1>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+        <h1>Mi Negocio</h1>
     </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
     <section id="inicio" class="hero">
-        <h2>Bienvenido</h2>
-        <p>Ofrecemos soluciones simples y efectivas para tu negocio.</p>
+        <h2>Bienvenido a Mi Negocio</h2>
+        <p>Soluciones simples para tu día a día.</p>
     </section>
 
     <section id="servicios" class="services">
         <div class="service-card">
-            <h3>Diseño Web</h3>
-            <p>Páginas rápidas y adaptables.</p>
+            <h3>Servicio 1</h3>
+            <p>Descripción breve del servicio.</p>
         </div>
         <div class="service-card">
-            <h3>SEO Básico</h3>
-            <p>Mejoramos tu visibilidad en Google.</p>
-        </div>
-        <div class="service-card">
-            <h3>Hosting</h3>
-            <p>Alojamiento confiable.</p>
+            <h3>Servicio 2</h3>
+            <p>Descripción breve del servicio.</p>
         </div>
     </section>
 
-    <section id="contacto" class="contact">
+    <section id="contacto" style="padding: 2rem; max-width: 500px; margin: 0 auto;">
         <h2>Contacto</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Nombre" required>
-            <input type="email" placeholder="Correo" required>
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+        <form onsubmit="alert('Mensaje enviado (simulado)'); return false">
+            <input type="text" placeholder="Nombre" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+            <input type="email" placeholder="Correo" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+            <textarea placeholder="Mensaje" style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"></textarea>
+            <button type="submit" style="background: #2c3e50; color: white; border: none; padding: 0.5rem 1rem;">Enviar</button>
         </form>
     </section>
 
-    <script>
-        // Simular envío de formulario
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Mensaje enviado (simulado). En un proyecto real, se conectaría a FormSubmit.co o EmailJS.');
-            e.target.reset();
-        });
-    </script>
+    <footer>
+        <p>&copy; 2023 Mi Negocio. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
