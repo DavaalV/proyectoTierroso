@@ -32,14 +32,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Análisis -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TUCODIGO"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TUCODIGO');
-  </script>
+
 </head>
 
 <body class="is-preload">
@@ -54,9 +47,6 @@
       <p class="loader-text">Cargando experiencia...</p>
     </div>
   </div>
-
-  <!-- Cursor personalizado -->
-  <div class="cursor"></div>
 
   <!-- Navegación -->
   <nav id="navbar" class="glass-nav">
@@ -96,11 +86,7 @@
   <!-- Hero Section -->
   <header id="inicio" class="video-header">
     <div class="video-background">
-      <video autoplay muted loop playsinline poster="assets/hero-poster.jpg">
-        <source src="assets/hero-bg.mp4" type="video/mp4">
-        <source src="assets/hero-bg.webm" type="video/webm">
-      </video>
-      <div class="video-overlay"></div>
+      <img src="assets/Fondo1.png" alt="Fondo Hero" class="hero-image">  <!--AQUI ES PARA LA FOTO BROOOOOOOOOOOOOOOOOOOOOOOOOOOOO-->
     </div>
     
     <div class="header-content">
@@ -271,7 +257,6 @@
           <div class="catalog-item" data-category="landing">
             <div class="catalog-img-container">
               <img src="assets/productos/producto1.png" alt="Plantilla Web Básica" class="catalog-img" loading="lazy">
-              <div class="catalog-badge">Más Vendido</div>
               <div class="catalog-overlay">
                 <div class="overlay-content">
                   <a href="catalogo/producto1.html" class="catalog-link demo-btn">
@@ -282,14 +267,6 @@
             </div>
             <div class="catalog-info">
               <h3>Página Web Básica</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(24)</span>
-              </div>
               <p class="catalog-desc">Ideal para negocios locales que necesitan una presencia en línea simple (ejemplo: talleres, freelancers, pequeños comercios).</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$2,000 <small>MXN</small></span>
@@ -311,14 +288,6 @@
             </div>
             <div class="catalog-info">
               <h3>Página Web Profesional</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>(18)</span>
-              </div>
               <p class="catalog-desc">Perfecta para profesionales o pequeñas empresas que buscan un diseño más pulido y funcionalidades clave.</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$4,000 <small>MXN</small></span>
@@ -331,7 +300,6 @@
           <div class="catalog-item" data-category="landing">
             <div class="catalog-img-container">
               <img src="assets/productos/producto3.png" alt="Landing Page para Servicios/Productos" class="catalog-img" loading="lazy">
-              <div class="catalog-badge">Destacado</div>
               <div class="catalog-overlay">
                 <div class="overlay-content">
                   <a href="catalogo/producto3.html" class="catalog-link demo-btn">
@@ -342,14 +310,6 @@
             </div>
             <div class="catalog-info">
               <h3>Landing Page para Servicios/Productos</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(32)</span>
-              </div>
               <p class="catalog-desc">Perfecta para promocionar un producto, servicio o evento. Incluye secciones clave: hero con CTA, beneficios, testimonios y contacto.</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$7,500 <small>MXN</small></span>
@@ -371,14 +331,6 @@
             </div>
             <div class="catalog-info">
               <h3>Landing Page Premium</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>(28)</span>
-              </div>
               <p class="catalog-desc">Diseñada para campañas específicas (lanzamientos, promociones, eventos) o negocios que dependen de conversiones (ejemplo: cursos online, productos digitales).</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$6,000 <small>MXN</small></span>
@@ -400,14 +352,6 @@
             </div>
             <div class="catalog-info">
               <h3>Plantilla Blog</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>(45)</span>
-              </div>
               <p class="catalog-desc">Para empresas establecidas que necesitan un sitio web con funcionalidades avanzadas (reservas, área de clientes o e-commerce básico).</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$8,000 <small>MXN</small></span>
@@ -419,7 +363,6 @@
           <div class="catalog-item" data-category="corporate">
             <div class="catalog-img-container">
               <img src="assets/productos/producto6.png" alt="Plantilla Profesional V1" class="catalog-img" loading="lazy">
-              <div class="catalog-badge">Nuevo</div>
               <div class="catalog-overlay">
                 <div class="overlay-content">
                   <a href="catalogo/producto6.html" class="catalog-link demo-btn">
@@ -430,14 +373,6 @@
             </div>
             <div class="catalog-info">
               <h3>Plantilla Profesional V1</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(19)</span>
-              </div>
               <p class="catalog-desc">Para empresas en crecimiento que necesitan una presencia digital profesional con funcionalidades avanzadas.</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$9,000 <small>MXN</small></span>
@@ -459,14 +394,6 @@
             </div>
             <div class="catalog-info">
               <h3>Plantilla Profesional V2</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>(22)</span>
-              </div>
               <p class="catalog-desc">Para empresas que buscan un sitio corporativo completo con secciones estratégicas (servicios, estadísticas, contacto).</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$9,000 <small>MXN</small></span>
@@ -488,14 +415,6 @@
             </div>
             <div class="catalog-info">
               <h3>Plantilla E-commerce</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>(37)</span>
-              </div>
               <p class="catalog-desc">Tienda online optimizada para conversiones con carrito de compras, pasarelas de pago y panel de administración.</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$10,000 <small>MXN</small></span>
@@ -507,7 +426,6 @@
           <div class="catalog-item" data-category="ecommerce">
             <div class="catalog-img-container">
               <img src="assets/productos/producto9.jpg" alt="Plantilla E-commerce Premium" class="catalog-img" loading="lazy">
-              <div class="catalog-badge">Premium</div>
               <div class="catalog-overlay">
                 <div class="overlay-content">
                   <a href="catalogo/producto9.html" class="catalog-link demo-btn">
@@ -518,21 +436,12 @@
             </div>
             <div class="catalog-info">
               <h3>Plantilla E-commerce Premium</h3>
-              <div class="catalog-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(41)</span>
-              </div>
               <p class="catalog-desc">Solución avanzada para negocios con catálogo extenso, incluye filtros, wishlist y integración con ERP.</p>
               <div class="catalog-footer">
                 <span class="catalog-price">$12,000 <small>MXN</small></span>
               </div>
             </div>
           </div>
-          <!-- Más productos... -->
         </div>
         
         <div class="catalog-cta">
@@ -649,7 +558,6 @@
               <p>Aceptamos transferencias bancarias, PayPal, Mercado Pago y tarjetas de crédito/débito (Visa, MasterCard). Ofrecemos opciones de pago en parcialidades sin intereses.</p>
             </div>
           </div>
-
           <!-- Más preguntas... -->
         </div>
 
@@ -691,7 +599,6 @@
                   <p>+52 733 336 1723</p>
                 </div>
               </div>
-              
               <!--<div class="info-item">
                 <div class="info-icon">
                   <i class="fas fa-envelope"></i>
@@ -774,17 +681,6 @@
               <li><a href="#servicios"><i class="fas fa-chevron-right"></i> Branding Digital</a></li>
             </ul>
           </div>
-          
-            <div class="payment-methods">
-              <h4>Métodos de Pago</h4>
-              <div class="payment-icons">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-cc-paypal"></i>
-                <i class="fas fa-money-bill-wave"></i>
-                <i class="fas fa-university"></i>
-              </div>
-            </div>
         </div>
       </div>
     </div>

@@ -37,42 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 4000);
 
-  // ==========================================================================
-  // Cursor personalizado
-  // ==========================================================================
-  // Configuración del cursor (versión simplificada)
-    const cursor = document.querySelector('.cursor');
-    let mouseX = 0, mouseY = 0;
-
-    // Actualizar posición del cursor
-    document.addEventListener('mousemove', function(e) {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      gsap.set(cursor, {
-        css: {
-          left: mouseX,
-          top: mouseY
-        }
-      });
-    });
-
-    // Efectos hover (solo para el cursor principal)
-    const hoverElements = [
-      'a', 'button', '.service-card-3d', '.catalog-item', 
-      '.nav-link', '.cta-button', 'input', 'textarea', 'select'
-    ];
-
-    hoverElements.forEach(selector => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach(el => {
-        el.addEventListener('mouseenter', function() {
-          cursor.classList.add('active');
-        });
-        el.addEventListener('mouseleave', function() {
-          cursor.classList.remove('active');
-        });
-      });
-    });
 
   // ==========================================================================
   // Navegación
