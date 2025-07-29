@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | Mi Tienda</title>
+    <style>
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        /* Filtros */
+        .filters {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Productos */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .product-description {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .product-category {
+            display: inline-block;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Catálogo de Productos</h1>
+            <p>Los mejores productos al mejor precio</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <label for="category">Categoría</label>
+                <select id="category">
+                    <option value="all">Todas las categorías</option>
+                    <option value="electronics">Electrónicos</option>
+                    <option value="clothing">Ropa</option>
+                    <option value="home">Hogar</option>
+                    <option value="sports">Deportes</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="price">Precio máximo</label>
+                <input type="range" id="price" min="0" max="5000" value="5000" step="100">
+                <span id="price-value">$5000</span>
+            </div>
+            
+            <button id="filter-btn">Filtrar</button>
+            <button id="reset-btn">Reiniciar</button>
+        </div>
+        
+        <div class="products" id="products-container">
+            <!-- Los productos se cargarán aquí con JavaScript -->
+        </div>
+    </div>
+    
+    <script>
+        // Datos de productos (simulando una base de datos)
+        const products = [
+            {
+                id: 1,
+                title: "Smartphone X200",
+                price: 3499,
+                description: "El último smartphone con cámara de 48MP y pantalla AMOLED.",
+                category: "electronics",
+                image: "https://via.placeholder.com/300x200?text=Smartphone"
+            },
+            {
+                id: 2,
+                title: "Zapatos Deportivos",
+                price: 899,
+                description: "Zapatos cómodos para correr con amortiguación de aire.",
+                category: "sports",
+                image: "https://via.placeholder.com/300x200?text=Zapatos"
+            },
+            {
+                id: 3,
+                title: "Sofá Moderno",
+                price: 4299,
+                description: "Sofá de 3 plazas en tela resistente y cómoda.",
+                category: "home",
+                image: "https://via.placeholder.com/300x200?text=Sofá"
+            },
+            {
+                id: 4,
+                title: "Camisa Casual",
+                price: 499,
+                description: "Camisa de algodón 100% en varios colores.",
+                category: "clothing",
+                image: "https://via.placeholder.com/300x200?text=Camisa"
+            },
+            {
+                id: 5,
+                title: "Audífonos Inalámbricos",
+                price: 1299,
+                description: "Sonido de alta calidad con cancelación de ruido.",
+                category: "electronics",
+                image: "https://via.placeholder.com/300x200?text=Audífonos"
+            },
+            {
+                id: 6,
+                title: "Mesa de Centro",
+                price: 1599,
+                description: "Mesa de centro moderna en madera maciza.",
+                category: "home",
+                image: "https://via.placeholder.com/300x200?text=Mesa"
+            },
+            {
+                id: 7,
+                title: "Raqueta de Tenis",
+                price: 899,
+                description: "Raqueta profesional ligera y resistente.",
+                category: "sports",
+                image: "https://via.placeholder.com/300x200?text=Raqueta"
+            },
+            {
+                id: 8,
+                title: "Pantalón Jeans",
+                price: 599,
+                description: "Jeans ajustados en diferentes tallas y colores.",
+                category: "clothing",
+                image: "https://via.placeholder.com/300x200?text=Jeans"
+            }
+        ];
+        
+        // Elementos del DOM
+        const productsContainer = document.getElementById('products-container');
+        const categoryFilter = document.getElementById('category');
+        const priceFilter = document.getElementById('price');
+        const priceValue = document.getElementById('price-value');
+        const filterBtn = document.getElementById('filter-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        
+        // Mostrar el valor del rango de precio
+        priceFilter.addEventListener('input', () => {
+            priceValue.textContent = `$${priceFilter.value}`;
+        });
+        
+        // Función para renderizar productos
+        function renderProducts(productsToRender) {
+            productsContainer.innerHTML = '';
+            
+            if (productsToRender.length === 0) {
+                productsContainer.innerHTML = '<p>No se encontraron productos con esos filtros.</p>';
+                return;
+            }
+            
+            productsToRender.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.title}" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-price">$${product.price.toLocaleString()}</p>
+                        <p class="product-description">${product.description}</p>
+                        <span class="product-category">${getCategoryName(product.category)}</span>
+                    </div>
+                `;
+                
+                productsContainer.appendChild(productCard);
+            });
+        }
+        
+        // Función para obtener el nombre de la categoría
+        function getCategoryName(category) {
+            const categories = {
+                electronics: 'Electrónicos',
+                clothing: 'Ropa',
+                home: 'Hogar',
+                sports: 'Deportes'
+            };
+            return categories[category] || category;
+        }
+        
+        // Función para filtrar productos
+        function filterProducts() {
+            const selectedCategory = categoryFilter.value;
+            const maxPrice = parseInt(priceFilter.value);
+            
+            const filteredProducts = products.filter(product => {
+                const categoryMatch = selectedCategory === 'all' || product.category === selectedCategory;
+                const priceMatch = product.price <= maxPrice;
+                
+                return categoryMatch && priceMatch;
+            });
+            
+            renderProducts(filteredProducts);
+        }
+        
+        // Función para reiniciar filtros
+        function resetFilters() {
+            categoryFilter.value = 'all';
+            priceFilter.value = '5000';
+            priceValue.textContent = '$5000';
+            renderProducts(products);
+        }
+        
+        // Event listeners
+        filterBtn.addEventListener('click', filterProducts);
+        resetBtn.addEventListener('click', resetFilters);
+        
+        // Cargar productos al inicio
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+        });
+    </script>
+</body>
+</html>
